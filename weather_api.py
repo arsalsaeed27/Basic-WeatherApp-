@@ -1,8 +1,12 @@
 import requests
-API_KEY = "9a5cc69ac09e10360c7d2f3c02e944b7"  
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
-def get_weather(city): # func to get the weather from API
+def get_weather(city):# func to get the weather from API
     params ={
         "q":city,
         "appid":API_KEY,
